@@ -1,0 +1,47 @@
+<h1>Pet Shelter</h1>
+<h4>Edit this pet</h4>
+<div *ngFor="let error of errors">
+    <p style="color: purple;">{{error}}</p>
+</div>
+<div class="row">
+    <div class="col col-md-8">
+        <form (submit)="updatePet(thePet._id)" style="border: 2px solid black;">
+            <div class="form-group">
+                <label><strong>Pet Name</strong></label>
+                <input name="thePet.name" [(ngModel)]="thePet.name" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label><strong>Pet Type</strong></label>
+                <input name="thePet.type" [(ngModel)]="thePet.type" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label><strong>Description</strong></label>
+                <input name="thePet.description" [(ngModel)]="thePet.description" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label><strong>Skills (Optional)</strong></label>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Skill 1:</label>
+                    <div class="col-sm-10">
+                        <input name="thePet.skill1" [(ngModel)]="thePet.skill1" type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Skill 2:</label>
+                    <div class="col-sm-10">
+                        <input name="thePet.skill2" [(ngModel)]="thePet.skill2" type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Skill 3:</label>
+                    <div class="col-sm-10">
+                        <input name="thePet.skill3" [(ngModel)]="thePet.skill3" type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <button type="submit">Edit Pet</button> <a [routerLink]="['/pets/', thePet._id]"><button
+                    type="button">Cancel</button></a>
+        </form>
+    </div>
+    <div class="col"></div>
+</div>
